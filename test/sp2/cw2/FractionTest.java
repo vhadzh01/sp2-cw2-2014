@@ -160,4 +160,46 @@ public class FractionTest {
 
 		assertEquals("AbsValue failed", result, expectedFraction);
 	}
+
+	@Test
+	public void testNegateWhenFractionIsPositive() {
+
+		Fraction fraction = new Fraction(1, 12);
+		Fraction expectedFraction = new Fraction(-1, 12);
+
+		Fraction result = fraction.negate();
+
+		assertEquals("Negate failed", result, expectedFraction);
+	}
+
+	@Test
+	public void testNegateWhenFractionIsNegative() {
+
+		Fraction fraction = new Fraction(-1, 12);
+		Fraction expectedFraction = new Fraction(1, 12);
+
+		Fraction result = fraction.negate();
+
+		assertEquals("Negate failed", result, expectedFraction);
+	}
+
+	@Test
+	public void testToStringWhenDenomiratorIsEqualToOne() {
+
+		Fraction fraction = new Fraction(12, 1);
+
+		String result = fraction.toString();
+
+		assertEquals("toString failed", result, "12");
+	}
+
+	@Test
+	public void testToStringWhenDenomiratorIsNotEqualToOne() {
+
+		Fraction fraction = new Fraction(12, 11);
+
+		String result = fraction.toString();
+
+		assertEquals("toString failed", result, "12/11");
+	}
 }

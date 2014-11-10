@@ -20,6 +20,12 @@ public class Fraction {
 
 	@Override
 	public String toString() {
+
+		if (denominator == 1) {
+
+			return "" + getNumerator();
+		}
+
 		return "" + getNumerator() + '/' + getDenominator();
 	}
 
@@ -121,5 +127,13 @@ public class Fraction {
 		}
 
 		return new Fraction(numerator, denominator);
+	}
+
+	public Fraction negate() {
+
+		int numerator = this.getNumerator();
+		int denominator = this.getDenominator();
+
+		return new Fraction(numerator * -1, denominator);
 	}
 }
